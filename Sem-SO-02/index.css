@@ -18,7 +18,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-bottom: auto;
-    height: 1000px;
+    height: 2000px;
 }
 
 #keys {
@@ -27,7 +27,7 @@ body{
     gap: 9px;
     position: relative;
     top: auto; left: 40px;
-    bottom: 400px;
+    bottom: 950px;
  
 }
 
@@ -47,7 +47,7 @@ button {
     background-color: lightblue;
 }
 
-#Buttons{
+.Buttons{
     max-width: 300px;
     height: 40px;
     position: absolute;
@@ -62,7 +62,13 @@ button {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas, una para inputs y otra para el botón */
     gap: 9px;
     position: absolute;
-    top: auto; right: auto;
+    top: 160px;
     bottom: auto;
     cursor: pointer;
+}
+
+#Done{
+    position: absolute;
+    right: 900px;
+    border-radius: 50px;
 }
