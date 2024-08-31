@@ -1,0 +1,108 @@
+//Cuenta progresiva 
+let count = document.querySelector("#One") //Puedo seleccionar cualquier etiqueta html donde quiera que se muestre
+let counter = 0;
+setInterval(()=>{ //Inicia conteo
+    if (counter < Infinity) //Si el contador es menor que 200
+    {
+        counter ++; //Lo hace hasta llegar a 200
+        count.innerText = counter;//Muestra en pantalla
+    }
+}, 1000) //Lo hace cada segundo
+
+// TME y TMR
+let totalSeconds = 0; // Tiempo restante
+let totalSeconds1 = 0; // Tiempo estimado
+let interval; 
+
+// Función que actualiza el tiempo restante y el estimado
+function Timer() {
+    if (totalSeconds > 0) { //decrementamos si el total es mayor a 0
+        totalSeconds--;
+        document.getElementById('Two').value = `\tEstimado: ${totalSeconds1} segundos \t Tiempo Restante: ${totalSeconds} segundos \n` //Lo mostramos
+    } else { //Sino limpiamos y lo igualamos a null, al igual si el contador llega a 0
+        clearInterval(interval);
+        interval = null;
+        
+        // Limpiar pantalla cuando TMR llega a 0
+        totalSeconds = 0;
+        totalSeconds1 = 0;
+        document.getElementById('Two').value = `${resultado}\nTiempo completado.`;
+    }
+}
+
+// Evento para manejar el click en el botón 'Done'
+    document.getElementById('Done').addEventListener('click', () => {  //Escuchamos el click
+    const TiempoEstimado = parseInt(document.getElementById('TME').value.trim(), 10); // lo tomamos en base 10 (decimal), le quitamos espacios con trim, lo mandamos el valor, qye tomamos del documento con TME, vemos si es un entero y lo asignamos a tiempo estimado
+
+    if (!isNaN(TiempoEstimado) && TiempoEstimado > 0) { //Si TE es distinto a un Not a Number y mayor a 0
+        // Sumar el nuevo tiempo estimado a ambos contadores
+        totalSeconds += TiempoEstimado;
+        totalSeconds1 += TiempoEstimado;
+
+        // Iniciar el intervalo si no está ya en ejecución cada segundo 
+        if (!interval) {
+            interval = setInterval(Timer, 1000);
+        }
+
+        // Limpiar el input de tiempo estimado
+        document.getElementById('TME').value = '';
+    } else { //Si es una letra mandamos alerta BB
+        alert("Ingrese un número válido.");
+    }
+});
+
+
+// Evento para calcular la operación
+document.getElementById('Done').addEventListener('click', () => {
+    const operador = document.getElementById('Calcular').value; // Obtener el operador del select
+    realizarOperacion(operador);
+});
+
+
+function realizarOperacion(operador) {
+    const input1 = parseFloat(document.getElementById('input1').value);
+    const input2 = parseFloat(document.getElementById('input2').value);
+    let resultado;
+
+
+    if (isNaN(input1) || isNaN(input2)) {
+        resultado = "Por favor, ingrese ambos números.";
+        // document.getElementById('input1').value = '';
+        // document.getElementById('input2').value = '';
+    } 
+    else {
+        switch (operador) {
+            case '+':
+                resultado = input1 + input2;
+                break;
+            case '-':
+                resultado = input1 - input2;
+                break;
+            case '*':
+                resultado = input1 * input2;
+                break;
+            case '/':
+                if (input2 !== 0) {
+                    resultado = input1 / input2;
+                } else {
+                    resultado = "No se puede dividir por cero.";
+                }
+                break;
+            case '%':
+                resultado = input1 % input2;
+                break;
+            default:
+                resultado = "Operación no válida.";
+                break;
+        }
+    }
+
+    const resultadoTextArea = document.getElementById('one');
+    resultadoTextArea.value = `\nResultado: ${resultado}`;
+
+    console.log('Mostrando resultado:', resultado);
+
+    setTimeout(() => {
+        document.getElementById('Two').value = `Estimado: ${totalSeconds1} segundos \nTiempo Restante: ${totalSeconds} segundos`;
+    }, 15000);
+}

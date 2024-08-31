@@ -1,0 +1,87 @@
+html{
+    line-height: 1.15; /*Espacio entre texto, verticalemte*/
+}
+
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: wheat;
+}
+
+h1, p, span{
+    text-align: left; 
+    color: teal;
+}
+
+h2{
+    text-align: center;
+    color: teal;
+
+}
+
+
+.TomarP{
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto; /*Lo centramos*/
+}
+
+.TomarProForm{
+    color: teal;
+}
+
+.TomarProForm {
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 900; /*Letra en negrita*/
+    /*text-transform: uppercase; /*Poner en mayusculas*/
+    display: block;
+    text-align: center;
+}
+
+.TomarProForm input{
+    border: 1px solid black;
+    border-radius: .5rem;
+    width: 50px;
+}
+
+.BTN{
+    padding: .5rem 10.2rem;
+    margin-left: 11px;
+    border: 1px solid black;
+    border-radius: 40px;
+}
+.BTN:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.contenedor{
+    margin-top: 150px;
+    display:grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.tabla {
+    border: 2px solid black;
+    width: 80%;
+    border-spacing: 0;
+    margin: 0 auto;
+    color: white;
+}
+
+.tabla thead{
+    background-color: rgba(74, 134, 120, 0.87);
+}
+
+.tabla td{
+    margin-left: 1rem;
+    text-align: center; 
+}
+
+/* footer{ 
+    padding: 300px 0 0 600px;
+    background-color: wheat;
+} */

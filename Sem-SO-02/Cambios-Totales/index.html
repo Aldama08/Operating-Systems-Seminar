@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesamientos por Lotes</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div class="TomarP"> 
+        <form class="TomarProForm">    
+            <fieldset class="TomarProces">
+                <!-- <legend>Proceso</legend> -->
+                <label for="Ingresar"> Inserte procesos:</label>     
+                <input type="num" id="procesos" required>
+            </fieldset>        
+        </form>
+        <input class="BTN" id="Ingresar" type="submit" value="Ingresar">
+
+        <div class="alerta" id="Errores">
+
+        </div>
+
+    </div>
+
+    <div class="contenedor">
+        <div>
+            <!--Lote en Proceso-->
+            <h2>Lote en Proceso</h2>
+            <table class="tabla">
+                <thead>
+                    <th>Lote</th>
+                    <th>ID</th> 
+                    <th>Tiempo</th> 
+                </thead>
+                <tbody id="loteProceso">
+                
+                </tbody>
+            </table>
+        </div>
+        <!-- Proceso en Ejecucion -->
+        <div >
+            <h2>Proceso en Ejecucion</h2>
+            <div id="procesoEjecucion" class="proceso">
+
+            </div>
+        </div>
+        <div>
+            <h2>Procesos Terminados</h2>
+            <table class="tabla">
+                <thead>
+                    <th>Lote</th>
+                    <th>ID</th>
+                    <th>Operacion</th> 
+                    <th>Resultado</th> 
+                </thead>
+                <tbody id="procesoTerminado">
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <footer>
+        <p id="tiempoTotal" class="total"></p>
+        <p>:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/:/   </p>
+    </footer> -->
+
+    <script src="main.js"></script>
+</body>
+</html>
