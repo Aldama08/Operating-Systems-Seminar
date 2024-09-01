@@ -8,26 +8,67 @@
 </head>
 <body>
     
-    <di id="Procesos"> 
-
-        <div id="keys">            
-        <!-- <button id="Time" class="Buttons">|^|</button>    -->
-        <input id="Name" placeholder="Name">
-        <!-- <input id="DownTime" placeholder="TMR"> -->
-        <input id="ID" placeholder="ID">
-        <input id="Operation" placeholder="Operation">
-        <input id="TME" placeholder="TME">
-        <button class="Buttons" id="Done" onclick="('Done')">Done</button>
-
+    <div class="Nprocesos"> 
+        <form class="formulario2">    
+            <fieldset class="formulario2f">
+                <!-- <legend>Proceso</legend> -->
+                <label for="proceso"> Inserte procesos:</label>     
+                <input type="num" id="procesos" required>
+            </fieldset>        
+        </form>
+        <input class="boton" id="ingresar" type="submit" value="Ingresar">
+        <div id="errores" class="alerta" >
         </div>
 
-        <div id="Area">
-            <textarea id="One" name="Todo" rows="40" cols="80" readonly> </textarea>
-            <textarea id="Two" name="OperationArea" rows="40" cols="80" readonly> </textarea>
-        </di>
-        
-    </di>
+    </div>
 
-    <script src="index.js"></script>
+    <div id="proceso" class="Nproceso">
+           
+    </div>
+
+    <div class="contenedor">
+        <div>
+            <!--Lote en Proceso-->
+            <h2>Lote en Proceso</h2>
+            <table class="tabla">
+                <thead>
+                    <th>Lote</th>
+                    <th>ID</th> 
+                    <th>Tiempo</th> 
+                </thead>
+                <tbody id="loteProceso">
+                
+                </tbody>
+            </table>
+        </div>
+        <!-- Proceso en Ejecucion -->
+        <div >
+            <h2>Proceso en Ejecucion</h2>
+            <div id="procesoEjecucion" class="proceso">
+
+            </div>
+        </div>
+        <div>
+            <h2>Procesos Terminados</h2>
+            <table class="tabla">
+                <thead>
+                    <th>Lote</th>
+                    <th>ID</th>
+                    <th>Operacion</th> 
+                    <th>Resultado</th> 
+                </thead>
+                <tbody id="procesoTerminado">
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p id="tiempoTotal" class="total"></p>
+    </footer>
+
+    <script src="Scripts/index.js"></script>
+    <script src="Scripts/Index-1.1.js"></script>
 </body>
 </html>

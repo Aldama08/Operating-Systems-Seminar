@@ -1,76 +1,94 @@
+html{
+    line-height: 1.15; /*Espacio entre texto, verticalemte*/
+}
+
 body{
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: whitesmoke;
-}
-
-/* # para ID's */
-#Procesos {
     font-family: 'Times New Roman', Times, serif;
-    width: 100%;
-    max-width: 2000px;
-    padding: 4px; 
-    border-radius: 5px;
-    /* overflow: hidden;  */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-bottom: 10px; */
-    /* height: 2000px; */
+    background-color: wheat;
 }
 
-#keys{
-    display: grid;
-    grid-template-columns: repeat(4, 4fr); /* 2 columnas, una para inputs y otra para el botón */
-    gap: 9px;
-    margin-bottom: 20px;
-    /* top: -100px; */
-    /* position: relative; */
-    /* bottom: 950px; */
- 
+h1, p, span{
+    text-align: left; 
+    color: teal;
 }
 
-input, button {
-    width: 100%;
-    height: 50px;
-    border-radius: 2px;
-    border: none;
-    background-color: azure;
-    color: black;
-    font-size: 1.5rem;
+h2{
     text-align: center;
+    color: teal;
+
+}
+
+fieldset{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TomarP{
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto; /*Lo centramos*/
+}
+
+.TomarProForm{
+    color: teal;
+}
+
+.TomarProForm {
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 900; /*Letra en negrita*/
+    /*text-transform: uppercase; /*Poner en mayusculas*/
+    display: block;
+    text-align: center;
+}
+
+.TomarProForm input{
+    border: 1px solid black;
+    border-radius: .5rem;
+    width: 50px;
+}
+
+.boton{
+    padding: .5rem 5rem;
+    margin-left: 850px;
+    border: 1px solid black;
+    border-radius: 40px;
+}
+
+.boton:hover{
+    color: blue;
     cursor: pointer;
 }
 
-button {
-    background-color: lightblue;
+.contenedor{
+    margin-top: 150px;
+    display:grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.Buttons{
-    max-width: 300px;
-    height: 40px;
-    position: absolute;
-    top: 60px;
-    /* bottom: auto; */
-    border: 1px;
-    border-radius: 10px;
+
+.tabla {
+    border: 2px solid black;
+    width: 80%;
+    border-spacing: 0;
+    margin: 0 auto;
+    color: black;
 }
 
-#Area{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas, una para inputs y otra para el botón */
-    gap: 9px;
-    width: 100%;
-    margin-top: 50px;  
-    /* position: relative;*/
-    /* bottom: auto; */
-    /* cursor: pointer; */
+.tabla thead{
+    background-color: rgba(74, 134, 120, 0.87);
 }
 
-/* #Done{
-    position: static;
-    border-radius: 50px;
-} */
+.tabla td{
+    margin-left: 1rem;
+    text-align: center; 
+}
+
+footer{ 
+    padding: 300px 0 0 600px;
+    background-color: wheat;
+    margin-top: -150px;
+} 
